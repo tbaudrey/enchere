@@ -1,0 +1,10 @@
+
+.contenu, .titre, .pied, .menu{
+    background-color: darkmagenta;
+    color: greenyellow;
+    border-radius: 30px;
+    font-family: fantasy;
+    font-size: large;
+    text-align: center;
+    
+}
