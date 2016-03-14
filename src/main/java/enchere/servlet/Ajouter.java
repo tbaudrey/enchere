@@ -48,14 +48,15 @@ public class Ajouter extends AutowireServlet {
         
         Integer prixDepart = Integer.parseInt(req.getParameter("prixDepart"));
         Integer prixActuel = Integer.parseInt(req.getParameter("prixDepart"));
+        Integer prixFinal = Integer.parseInt(req.getParameter("prixFinal"));
         a.setPrixDepart(prixDepart);
         a.setPrixActuel(prixActuel);
+        a.setPrixFinal(prixFinal);
         
         String login = (String) req.getSession().getAttribute("login");
         utilisateur=utilisateurService.findByLogin(login);
         utilisateur.getArticles().add(a);
         a.setUtilisateur(utilisateur);
-        
         String choixCategorie=req.getParameter("choixCategorie");
         if(choixCategorie.equals("1")){
             categorie=categorieService.findOne(1L);
@@ -97,6 +98,7 @@ public class Ajouter extends AutowireServlet {
         System.out.println(a);
         articleService.save(a);
         
+        req.setAttribute("monVendeur", utilisateur);
         resp.sendRedirect("ListerArticles");
 //        req.setAttribute("prixDepart", prixDepart);
 //        req.setAttribute("prixActuel", prixActuel);

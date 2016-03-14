@@ -32,6 +32,7 @@ public class Article implements Serializable {
     
     private Integer prixActuel;
     private Integer prixDepart;
+    private Integer prixFinal;
     
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateVente;
@@ -72,6 +73,14 @@ public class Article implements Serializable {
 
     public void setUtilisateur(Utilisateur utilisateur) {
         this.utilisateur = utilisateur;
+    }
+
+    public Integer getPrixFinal() {
+        return prixFinal;
+    }
+
+    public void setPrixFinal(Integer prixFinal) {
+        this.prixFinal = prixFinal;
     }
     
 

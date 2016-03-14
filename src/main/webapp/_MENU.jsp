@@ -15,6 +15,6 @@
     <c:if test="${sessionScope.login!=null}">
         <a href="DeconnexionServlet">Deconnexion</a>
     </c:if>
-    Bonjour ${sessionScope.login}
     <a href="Compte">Mon Compte</a>
+    Bonjour ${sessionScope.login}
 </div>

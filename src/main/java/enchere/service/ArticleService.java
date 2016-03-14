@@ -7,6 +7,7 @@ package enchere.service;
 
 import enchere.entity.Article;
 import enchere.entity.Categorie;
+import enchere.entity.Utilisateur;
 import java.io.Serializable;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
@@ -17,7 +18,9 @@ import org.springframework.stereotype.Service;
  * @author admin
  */
 @Service
-public interface ArticleService extends CrudRepository<Article, Serializable>{
+public interface ArticleService extends CrudRepository<Article, Long>{
     
     public List<Article> findByCategorie(Categorie c);
+    
+    public List<Article> findByUtilisateur(Utilisateur u);
 }

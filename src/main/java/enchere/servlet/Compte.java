@@ -32,21 +32,21 @@ public class Compte extends AutowireServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
-        String idArticle=(String)req.getParameter("id");
-        System.out.println(idArticle);
-        Article article = articleService.findOne(Long.parseLong(idArticle));
-        System.out.println(article);
-        Integer prixActuel=article.getPrixActuel();
-        Integer prixDepart=article.getPrixDepart();
-        prixActuel=prixActuel+1;
-        
-        article.setPrixActuel(prixActuel);
-        articleService.save(article);
-        
-        req.setAttribute("monArticle", article);
-        req.setAttribute("prixDepart", prixDepart);
-        req.setAttribute("prixActuel", prixActuel);
-        req.getRequestDispatcher("encherir.jsp").include(req, resp);
+//        String idArticle=(String)req.getParameter("id");
+//        System.out.println(idArticle);
+//        Article article = articleService.findOne(Long.parseLong(idArticle));
+//        System.out.println(article);
+//        Integer prixActuel=article.getPrixActuel();
+//        Integer prixDepart=article.getPrixDepart();
+//        prixActuel=prixActuel+1;
+//        
+//        article.setPrixActuel(prixActuel);
+//        articleService.save(article);
+//        
+//        req.setAttribute("monArticle", article);
+//        req.setAttribute("prixDepart", prixDepart);
+//        req.setAttribute("prixActuel", prixActuel);
+        req.getRequestDispatcher("compte.jsp").include(req, resp);
         
     }
     

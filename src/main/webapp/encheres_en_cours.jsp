@@ -12,18 +12,25 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <c:import url="_CSS.jsp"/>
         <c:import url="_TITRE.jsp"/>
-        <title>Encherir</title>
+        <title>Mon Compte</title>
     </head>
     <body>
         <c:import url="_MENU.jsp"/>
         <br>
         <div class="contenu">
             <br>
-            <h3>Vous avez selectionnez l'article suivant : ${monArticle.nom} , du vendeur : ${monVendeur}</h3>
+            <h4>
+                <a href="ArticlesMev">Mes articles mis en vente   /</a>
+                Mes encheres en cours   /
+                <a href="EncheresRemportees">Encheres remportees</a>
+            </h4>
+            
             <br>
-            <h4>Prix de depart de l'article : ${prixDepart}</h4>
-            <h4>Prix actuel de l'article : ${prixActuel}</h4>
-            <a href="Encherir?id=${monArticle.id}">ENCHERIR   (+1 euro)</a>
+            <c:forEach items="${mesArticles}" var="monArticleActuel">
+                        - ${monArticleActuel.nom} Prix de depart : ${monArticleActuel.prixDepart}, Prix Actuel : ${monArticleActuel.prixActuel}
+                        <a href="EnchereServlet?id=${monArticleActuel.id}">VOIR l'ENCHERE</a>
+                       <br>
+            </c:forEach>
             <br>
         </div>
         <br>    

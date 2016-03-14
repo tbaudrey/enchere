@@ -19,6 +19,9 @@
             <label>Prix de départ</label>
             <input type="text" name="prixDepart"/>
             <br>
+            <label>Prix final</label>
+            <input type="text" name="prixFinal"/>
+            <br>
             <!--<form action="choix_categorie" method="post">-->
             <label>choix de la categorie</label>
                 <select name="choixCategorie">

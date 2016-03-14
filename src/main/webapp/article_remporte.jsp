@@ -19,11 +19,13 @@
         <br>
         <div class="contenu">
             <br>
-            <h3>Vous avez selectionnez l'article suivant : ${monArticle.nom} , du vendeur : ${monVendeur}</h3>
+            <h3>FELICITATIONS ! Vous avez remportes l'article suivant : ${monArticle.nom}</h3>
             <br>
-            <h4>Prix de depart de l'article : ${prixDepart}</h4>
-            <h4>Prix actuel de l'article : ${prixActuel}</h4>
-            <a href="Encherir?id=${monArticle.id}">ENCHERIR   (+1 euro)</a>
+            <h4>Prix final de l'article : ${prixFinal}</h4>
+            
+                <a href="EnchereRemportees">PAYER ICI</a>
+                
+            
             <br>
         </div>
         <br>    

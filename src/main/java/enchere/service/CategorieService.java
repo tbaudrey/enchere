@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @author admin
  */
 @Service
-public interface CategorieService extends CrudRepository<Categorie, Serializable>{
+public interface CategorieService extends CrudRepository<Categorie, Long>{
     
 }
