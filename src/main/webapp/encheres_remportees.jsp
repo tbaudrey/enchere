@@ -19,10 +19,19 @@
         <br>
         <div class="contenu">
             <br>
-            <a href="articles_mev.jsp">Mes articles mis en vente   /</a>
-            <a href="encheres_en_cours.jsp">Mes encheres en cours   /</a>
-            <a href="encheres_remportees.jsp">Encheres remportees</a>
+            <h4>
+                <a href="ArticlesMev">Mes articles mis en vente   /</a>
+                <a href="EncheresEnCours">Mes encheres en cours   /</a>
+                Encheres remportees
+                <br>
+            </h4>
+            
             <br>
+            <c:forEach items="${mesArticles}" var="monArticleActuel">
+                        - ${monArticleActuel.nom} Prix de depart : ${monArticleActuel.prixDepart}, Prix Actuel : ${monArticleActuel.prixActuel}
+                        <a href="EnchereServlet?id=${monArticleActuel.id}">VOIR l'ENCHERE</a>
+                       <br>
+            </c:forEach>
             <br>
         </div>
         <br>    

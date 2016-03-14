@@ -43,6 +43,9 @@ public class ListerArticles extends AutowireServlet {
             if(listeArticles.get(i).isPaye()==true){
                 listeArticles.remove(i);
             }
+            if(listeArticles.get(i).getPrixActuel()==listeArticles.get(i).getPrixFinal()){
+                listeArticles.remove(i);
+            }
         }
        
         req.setAttribute("mesArticles", listeArticles);

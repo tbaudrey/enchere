@@ -25,7 +25,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  * @author admin
  */
-@WebServlet(name = "EncheresEnCours", urlPatterns = {"/EncheresEnCours"})
+@WebServlet(name = "EncheresRemportees", urlPatterns = {"/EncheresRemportees"})
 public class EncheresRemportees extends AutowireServlet {
 
     @Autowired
@@ -41,32 +41,32 @@ public class EncheresRemportees extends AutowireServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
         
-      List<Article> listeArticles = new ArrayList<>();
-      List<Enchere> listeEncheres = new ArrayList<>();
-      
-      String login = (String) req.getSession().getAttribute("login");
-      Utilisateur utilisateur = new Utilisateur();
-      utilisateur=utilisateurService.findByLogin(login);
-      
-      listeEncheres=enchereService.findByUtilisateur(utilisateur);
-      
-      Article article = new Article();
-      for(Enchere enchere : listeEncheres){
-          article=enchere.getArticle();
-          if(!listeArticles.contains(article)){
-              listeArticles.add(article);
-          }
-      }
-      
-      for( int i=0; i<listeArticles.size();i++){
-            if(listeArticles.get(i).isPaye()==true){
-                listeArticles.remove(i);
-            }
-        }
+//      List<Article> listeArticles = new ArrayList<>();
+//      List<Enchere> listeEncheres = new ArrayList<>();
+//      
+//      String login = (String) req.getSession().getAttribute("login");
+//      Utilisateur utilisateur = new Utilisateur();
+//      utilisateur=utilisateurService.findByLogin(login);
+//      
+//      listeEncheres=enchereService.findByUtilisateur(utilisateur);
+//      
+//      Article article = new Article();
+//      for(Enchere enchere : listeEncheres){
+//          article=enchere.getArticle();
+//          if(!listeArticles.contains(article)){
+//              listeArticles.add(article);
+//          }
+//      }
+//      
+//      for( int i=0; i<listeArticles.size();i++){
+//            if(listeArticles.get(i).isPaye()==true){
+//                listeArticles.remove(i);
+//            }
+//        }
       
 //        req.setAttribute("monVendeur", utilisateur.getLogin());
-        req.setAttribute("mesArticles", listeArticles);
-        req.getRequestDispatcher("encheres_en_cours.jsp").include(req, resp);
+//        req.setAttribute("mesArticles", listeArticles);
+        req.getRequestDispatcher("encheres_remportees.jsp").include(req, resp);
     }
 
     

@@ -23,7 +23,7 @@
             <br>
             <h4>Prix final de l'article : ${prixFinal}</h4>
             
-                <a href="EnchereRemportees">PAYER ICI</a>
+                <a href="EncheresRemportees">PAYER ICI</a>
                 
             
             <br>
